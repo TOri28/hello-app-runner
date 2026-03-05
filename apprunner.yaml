@@ -1,7 +1,7 @@
 version: 1.0
 runtime: python311
 build:
-  commands:
+  commands: |
     - yum install -y cairo cairo-devel libjpeg-devel libpng-devel freetype-devel pkgconfig zlib-devel
     - pip3 install --upgrade pip
     - pip3 install -r requirements.txt

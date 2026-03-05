@@ -3,6 +3,7 @@ runtime: python311
 build:
   commands:
     build:
+    - yum install -y cairo
     - pip3 install -r requirements.txt
 run:
   command: uvicorn app:app --host 0.0.0.0 --port 8000

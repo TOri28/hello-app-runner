@@ -5,15 +5,11 @@ build:
     build:
       - pip3 install --upgrade pip
       - pip3 install -r requirements.txt
-      - pip3 show uvicorn
-      - which python3
-      - python3 --version
-      - pip3 --version
 run:
   pre-run:
     - yum install -y cairo cairo-devel libjpeg-devel libpng-devel freetype-devel pkgconfig zlib-devel
-    - which python3
-    - pip3 list | grep uvicorn
+    - pip3 install --upgrade pip
+    - pip3 install -r requirements.txt
   command: python3 -m uvicorn app:app --host 0.0.0.0 --port 8000
   network:
     port: 8000
